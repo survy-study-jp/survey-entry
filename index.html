@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>アンケート受付</title></head>
+<body>
+<p>下のボタンを押すと、アンケートが始まります。</p>
+<button onclick="go()">開始</button>
+<script>
+function go() {
+  var g = null;
+  try { g = localStorage.getItem("group"); } catch (e) {}
+  if (g !== "1" && g !== "2") {
+    g = Math.random() < 0.5 ? "1" : "2";
+    try { localStorage.setItem("group", g); } catch (e) {}
+  }
+  if (g === "1") { location.href = "https://docs.google.com/forms/d/e/1FAIpQLSctN_uUMXTa7t0SuAFNkxZ2gSeAezSn6XQqZG1GKpi2DHBvwQ/viewform?usp=header"; }
+  else { location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdJEPdbG87wlLCueHnCNn2JYONf327OCtYbSrM1V91FlMNGaw/viewform?usp=header"; }
+}
+</script>
+</body>
+</html>
