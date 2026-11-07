@@ -15,7 +15,7 @@ function go() {
   var g = null;
   try { g = localStorage.getItem("group"); } catch (e) {}
   if (g !== "1" && g !== "2") {
-    g = Math.random() < 0.65 ? "1" : "2";
+    g = Math.random() < 0.5 ? "1" : "2";
     try { localStorage.setItem("group", g); } catch (e) {}
   }
   if (g === "1") { location.href = "https://docs.google.com/forms/d/e/1FAIpQLSfp2cyPlPuJKlYp6Anj6kPS31whsXPnGpas_l50dlq56u686g/viewform?usp=header"; }
